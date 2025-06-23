@@ -12,7 +12,7 @@ import IconBeneficios from "../../../assets/Group 165.png";
 
 export const Benefits = () => {
   return (
-    <HStack marginTop={"100px"} maxW={"900px"} id="benefits">
+    <HStack scrollMarginTop="70px" mt={"170px"} maxW={"900px"} id="benefits">
       <VStack p={"30px 150px"} maxW={"100%"} alignItems={"none"}>
         <Text
           color={"black"}

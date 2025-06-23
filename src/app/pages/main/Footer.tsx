@@ -15,10 +15,10 @@ export const Footer = () => {
           <Text mb="20px" fontWeight={"bold"} color="#363B8F">
             Health Care
           </Text>
-          <Link href="..." color="#000000" mb="20px">
+          <Link href="/pagina-termos-condicoes" color="#000000" mb="20px">
             Termos e Condições
           </Link>
-          <Link href="..." color="#000000" mb="20px">
+          <Link href="/pagina-politica-privacidade" color="#000000" mb="20px">
             Politica de Privacidade
           </Link>
         </Box>
@@ -26,13 +26,22 @@ export const Footer = () => {
           <Text fontWeight={"bold"} mb="20px" color="#363B8F">
             Sobre
           </Text>
-          <Link href="..." color="#000000" mb="20px">
+          <Link href="nossa-historia" color="#000000" mb="20px">
             Nossa História
           </Link>
-          <Link href="..." color="#000000" mb="20px">
+          <Link
+            color="#000000"
+            mb="20px"
+            onClick={() => {
+              const section = document.getElementById("benefits");
+              if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
             Benefícios
           </Link>
-          <Link href="..." color="#000000">
+          <Link href="/equipe" color="#000000">
             Equipe
           </Link>
         </Flex>

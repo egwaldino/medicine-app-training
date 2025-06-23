@@ -8,17 +8,42 @@ import {
   Button,
   IconButton,
   Text,
-  Image,
+  Image
 } from "@chakra-ui/react";
 import formImage from "../../../assets/formSession.png";
 import iconFacebook from "../../../assets/iconFacebook.svg";
 import iconInstagram from "../../../assets/iconInstagram.svg";
 import iconWhatsapp from "../../../assets/iconWhatsapp.svg";
 import iconTelefone from "../../../assets/iconTelefone.svg";
+import { toaster } from "../../../components/chakraUi/toaster";
 
 export const Contacts = () => {
+  const toastId = "contato-sucesso";
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    toaster.success({
+      title: "Mensagem enviada!",
+      description: "Obrigado pelo seu contato. Em breve retornaremos.",
+      action: {
+        label: "Fechar",
+        onClick: () => {
+          toaster.dismiss(toastId);
+        },
+      },
+      duration: 30000,
+    });
+    e.currentTarget.submit(); // envia o form após mostrar o toast
+  }
+
   return (
-    <Box position={"relative"} mt="20" maxW={"100%"} id="contacts">
+    <Box
+      position={"relative"}
+      maxW={"100%"}
+      id="contacts"
+      marginTop={"170px"}
+      scrollMarginTop="26px"
+    >
       <Flex
         position="absolute"
         direction={"column"}
@@ -40,7 +65,11 @@ export const Contacts = () => {
             Entre em contacto com a nossa equipe de medicina domiciliar
           </Text>
         </Box>
-        <form action="https://formsubmit.co/ecassuente@gmail.com" method="POST">
+        <form
+          action="https://formsubmit.co/ecassuente@gmail.com"
+          method="POST"
+          onSubmit={handleSubmit}
+        >
           <Stack>
             <Field.Root gap={"10px"}>
               <Field.Label>NOME COMPLETO</Field.Label>
@@ -55,7 +84,7 @@ export const Contacts = () => {
                 placeholder={"João Pedro Domingos"}
                 required
               />
-               <Field.Label>TELEFONE</Field.Label>
+              <Field.Label>TELEFONE</Field.Label>
               <Input
                 name="phoneNumber"
                 p={"20px"}
@@ -88,13 +117,13 @@ export const Contacts = () => {
               mb="40px"
             >
               <Button
-                type="submit"
                 w={"120px"}
                 py="21px"
                 fontSize={"16px"}
                 fontWeight="bold"
                 color="#363B8F"
                 borderRadius={"21px"}
+                type="submit"
               >
                 Enviar
               </Button>
@@ -102,19 +131,19 @@ export const Contacts = () => {
               <Text fontSize={"18px"}>ou</Text>
 
               <Flex w="100px">
-                <IconButton bg="none">
+                <IconButton bg="none" disabled>
                   <Image width={"30px"} height={"30px"} src={iconFacebook} />
                 </IconButton>
 
-                <IconButton bg="none">
+                <IconButton bg="none" disabled>
                   <Image width={"30px"} height={"30px"} src={iconInstagram} />
                 </IconButton>
 
-                <IconButton bg="none">
+                <IconButton bg="none" disabled>
                   <Image width={"30px"} height={"30px"} src={iconWhatsapp} />
                 </IconButton>
 
-                <IconButton bg="none">
+                <IconButton bg="none" disabled>
                   <Image width={"30px"} height={"30px"} src={iconTelefone} />
                 </IconButton>
               </Flex>

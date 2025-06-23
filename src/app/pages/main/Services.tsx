@@ -3,7 +3,12 @@ import ImageServices from "../../../assets/Vector.png";
 
 export const Services = () => {
   return (
-    <Box position={"relative"} mt={"80"} id="services">
+    <Box
+    mt={"170px"}
+    id="services"
+    position={"relative"}
+    scrollMarginTop="63px"
+    >
       <Image src={ImageServices} />
       <Box
         position="absolute"
@@ -18,7 +23,7 @@ export const Services = () => {
         alignItems="center"
         justifyContent="center"
         boxShadow="lg"
-        zIndex="1000"
+        zIndex="999"
       >
         <Text fontWeight="bold" fontSize={"60px"}>
           SERVIÇOS
@@ -38,7 +43,7 @@ export const Services = () => {
         alignItems="center"
         justifyContent="center"
         boxShadow="lg"
-        zIndex="1000"
+        zIndex="900"
       >
         <Text fontWeight="bold" fontSize={"40px"} textAlign={"center"}>
           Cuidados de Enfermagem
@@ -58,7 +63,7 @@ export const Services = () => {
         alignItems="center"
         justifyContent="center"
         boxShadow="lg"
-        zIndex="1000"
+        zIndex="900"
       >
         <Text fontWeight="bold" fontSize={"40px"} textAlign={"center"}>
           Cuidados de Idosos
@@ -78,7 +83,7 @@ export const Services = () => {
         alignItems="center"
         justifyContent="center"
         boxShadow="lg"
-        zIndex="1000"
+        zIndex="900"
       >
         <Text fontWeight="semibold" fontSize={"30px"} textAlign={"center"}>
           Colheitas de amostras
@@ -98,7 +103,7 @@ export const Services = () => {
         alignItems="center"
         justifyContent="center"
         boxShadow="lg"
-        zIndex="1000"
+        zIndex="900"
       >
         <Text fontWeight="semibold" fontSize={"22px"} textAlign={"center"}>
           Administração de medicamentos

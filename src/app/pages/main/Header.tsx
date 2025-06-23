@@ -8,24 +8,48 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import Banner from "../../../assets/Banner.png";
+import { useEffect, useState } from "react";
 import IconBanner from "../../../assets/Group 99.png";
 
 export const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <Box position={"relative"}>
       <Flex
-        px={"8"}
-        py={"4"}
-        top={"0"}
-        left={"0"}
-        width={"100%"}
-        color={"white"}
-        p={"15px 150px"}
-        position={"absolute"}
-        alignItems={"center"}
-        justifyContent={"space-between"}
+        px="8"
+        py="4"
+        width="100%"
+        color="white"
+        position={scrolled ? "fixed" : "absolute"}
+        top="0"
+        left="0"
+        zIndex="1100"
+        maxH="64px"
+        transition="all 0.3s ease-in-out"
+        bg={scrolled ? "rgba(87, 89, 175, 0.8)" : "none"}
+        backdropFilter={scrolled ? "blur(8px)" : "none"}
+        boxShadow={scrolled ? "md" : "none"}
+        justifyContent="space-between"
+        alignItems="center"
+        padding="15px 150px"
       >
-        <Button color={"white"} size={"xl"} variant="plain">
+        <Button
+          color={"white"}
+          size={"xl"}
+          variant="plain"
+          onClick={() => {
+            window.location.href = window.location.pathname;
+          }}
+        >
           Health Care
         </Button>
 
