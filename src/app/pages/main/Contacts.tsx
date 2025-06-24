@@ -66,7 +66,7 @@ export const Contacts = () => {
           </Text>
         </Box>
         <form
-          action="https://formsubmit.co/ecassuente@gmail.com"
+          action="https://formsubmit.co/joao3641@gmail.com"
           method="POST"
           onSubmit={handleSubmit}
         >
