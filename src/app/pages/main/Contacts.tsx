@@ -18,9 +18,9 @@ import iconTelefone from "../../../assets/iconTelefone.svg";
 import { toaster } from "../../../components/chakraUi/toaster";
 
 export const Contacts = () => {
-  const toastId = "contato-sucesso";
+  /* const toastId = "contato-sucesso"; */
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+/*   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     toaster.success({
       title: "Mensagem enviada!",
@@ -34,7 +34,7 @@ export const Contacts = () => {
       duration: 30000,
     });
     e.currentTarget.submit(); // envia o form após mostrar o toast
-  }
+  } */
 
   return (
     <Box
@@ -68,7 +68,7 @@ export const Contacts = () => {
         <form
           action="https://formsubmit.co/joao3641@gmail.com"
           method="POST"
-          onSubmit={handleSubmit}
+          /* onSubmit={handleSubmit} */
         >
           <Stack>
             <Field.Root gap={"10px"}>

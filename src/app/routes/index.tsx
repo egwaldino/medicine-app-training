@@ -6,11 +6,11 @@ import {
 } from "react-router-dom";
 import {
   Main,
+  Team,
+  AboutUs,
   Schedule,
   PrivacyPolicy,
   TermsAndConditions,
-  AboutUs,
-  Team,
 } from "../pages";
 
 export const Routes = () => {
