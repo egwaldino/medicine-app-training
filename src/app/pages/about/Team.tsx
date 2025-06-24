@@ -10,7 +10,7 @@ export const Team = () => {
           </Heading>
         </Box>
         <Text fontSize="md" color="gray.700" w={"80%"}>
-          Brevemente Disponível
+          Brevemente 
         </Text>
       </VStack>
     </Container>
