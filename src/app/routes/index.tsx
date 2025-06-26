@@ -7,6 +7,7 @@ import {
 import {
   Main,
   Team,
+  Thanks,
   AboutUs,
   Schedule,
   PrivacyPolicy,
@@ -27,11 +28,11 @@ export const Routes = () => {
           path="/pagina-termos-condicoes"
           element={<TermsAndConditions />}
         />
-        <Route path="/pagina-agendamento" element={<Schedule />} />
-        <Route path="/nossa-historia" element={<AboutUs />} />
         <Route path="/equipe" element={<Team />} />
+        <Route path="/nossa-historia" element={<AboutUs />} />
+        <Route path="/pagina-agendamento" element={<Schedule />} />
+        <Route path="/pagina-agradecimento" element={<Thanks />} />
 
-        {/* Redirecionamento para a página inicial */}
         <Route path="*" element={<Navigate to="/pagina-inicial" />} />
       </Switch>
     </BrowserRouter>
